@@ -2,7 +2,9 @@
 """
 Created on Sun Dec 15 19:40:51 2019
 
-@author: Javier Pardo
+@author: Javier Pardo 
+         https://www.linkedin.com/in/javier-pardo-fernandez-87b565124/
+         javiyupipa@gmail.com
 """
 
 import numpy as np
@@ -47,6 +49,7 @@ T = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 plt.close('all')
 
 #RIGHT HAND SIDE EQUATIONS
+#returns position and velocities at all times
 def rhs(t,state):
       
     x = state[0]
@@ -73,15 +76,18 @@ def rhs(t,state):
 Ro = np.array([0,0,0]) #initial positions
 Rf = np.array([20,3.66,2.4]) #final position
 
+ 
 def dist_to_target(Vo):
       
     init = np.array([Ro[0],Vo[0],Ro[1],Vo[1],Ro[2],Vo[2]])
-    sol = scp.solve_ivp(rhs,[time[0],time[-1]],init, t_eval=time)
+    sol = scp.solve_ivp(rhs,[time[0],time[-1]],init, t_eval=time) #force the amount of points
     
     x = sol['y'][0,:]
     y = sol['y'][2,:]
     z = sol['y'][4,:]
     
+    #shooting method
+    #when dist_r = 0 -> arrived to target
     dist_x = x[-1] - Rf[0]
     dist_y = y[-1] - Rf[1]
     dist_z = z[-1] - Rf[2]
@@ -99,6 +105,7 @@ time = np.linspace(0, 1.0, 200)
 #INITIAL CONDITIONS
 Vo = np.array([10,5,3]) #initial velocities
 
+#returns the initial velocities needed to reach the desired target
 best_init_Vo = optimize.root(dist_to_target, Vo)
 
 Vox = best_init_Vo['x'][0]
