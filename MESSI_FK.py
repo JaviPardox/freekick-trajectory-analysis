@@ -3,6 +3,8 @@
 Created on Mon Dec 16 01:14:23 2019
 
 @author: Javier Pardo
+         https://www.linkedin.com/in/javier-pardo-fernandez-87b565124/
+         javiyupipa@gmail.com
 """
 
 import numpy as np
@@ -70,7 +72,7 @@ Rf = np.array([32,3.66,2.3])
 def dist_to_target(Vo):
       
     init = np.array([Ro[0],Vo[0],Ro[1],Vo[1],Ro[2],Vo[2]])
-    sol = scp.solve_ivp(rhs,[0,10],init, t_eval=time)
+    sol = scp.solve_ivp(rhs,[time[0],time[-1]],init, t_eval=time)
     
     x = sol['y'][0,:]
     y = sol['y'][2,:]
@@ -106,7 +108,7 @@ print("Is equivalent to lift a mass of ",Work_equivalent_on_mass,"kg for a meter
 #using the velocities to find the position
 init_graph = np.array([Ro[0],Vox,Ro[1],Voy,Ro[2],Voz])
 
-sol = scp.solve_ivp(rhs,[0,10],init_graph, t_eval=time) #force the amount of points
+sol = scp.solve_ivp(rhs,[time[0],time[-1]],init_graph, t_eval=time) #force the amount of points
 x = sol['y'][0,:]
 y = sol['y'][2,:]
 z = sol['y'][4,:]
@@ -171,7 +173,7 @@ wall_y_l = np.linspace(-0.5,-0.5,50)
 
 cx.plot3D(wall_x_l,wall_y_l,wall_z_l,'-g')
 
-cx.set_title('Lionel Messi Free Kick')
+cx.set_title('Lionel Messi Free Kick vs Liverpool')
 
 cx.set_xlabel('x (m)')
 cx.set_ylabel('y (m)')

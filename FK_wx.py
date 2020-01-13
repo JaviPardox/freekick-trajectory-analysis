@@ -3,6 +3,8 @@
 Created on Mon Dec 16 02:57:48 2019
 
 @author: Javier Pardo
+         https://www.linkedin.com/in/javier-pardo-fernandez-87b565124/
+         javiyupipa@gmail.com
 """
 
 import numpy as np
@@ -39,7 +41,7 @@ Vx = []
 V = []
 W = [0.0,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5]
 
-#plt.close('all')
+plt.close('all')
 
 
 def rhs(t,state):
@@ -78,7 +80,7 @@ Rf = np.array([20,3.66,2.4])
 def dist_to_target(Vo):
       
     init = np.array([Ro[0],Vo[0],Ro[1],Vo[1],Ro[2],Vo[2]])
-    sol = scp.solve_ivp(rhs,[0,10],init, t_eval=time)
+    sol = scp.solve_ivp(rhs,[time[0],time[-1]],init, t_eval=time)
     
     x = sol['y'][0,:]
     y = sol['y'][2,:]
@@ -120,7 +122,7 @@ print("")
 #using the velocities to find the position
 init_graph = np.array([Ro[0],Vox,Ro[1],Voy,Ro[2],Voz])
 
-sol = scp.solve_ivp(rhs,[0,10],init_graph, t_eval=time) #force the amount of points
+sol = scp.solve_ivp(rhs,[time[0],time[-1]],init_graph, t_eval=time) #force the amount of points
 x = sol['y'][0,:]
 y = sol['y'][2,:]
 z = sol['y'][4,:]
@@ -175,7 +177,7 @@ print("")
 
 init_graph = np.array([Ro[0],Vox,Ro[1],Voy,Ro[2],Voz])
 
-sol = scp.solve_ivp(rhs,[0,10],init_graph, t_eval=time) #force the amount of points
+sol = scp.solve_ivp(rhs,[time[0],time[-1]],init_graph, t_eval=time) #force the amount of points
 x = sol['y'][0,:]
 y = sol['y'][2,:]
 z = sol['y'][4,:]
@@ -212,7 +214,7 @@ print("")
 
 init_graph = np.array([Ro[0],Vox,Ro[1],Voy,Ro[2],Voz])
 
-sol = scp.solve_ivp(rhs,[0,10],init_graph, t_eval=time) #force the amount of points
+sol = scp.solve_ivp(rhs,[time[0],time[-1]],init_graph, t_eval=time) #force the amount of points
 x = sol['y'][0,:]
 y = sol['y'][2,:]
 z = sol['y'][4,:]
@@ -250,7 +252,7 @@ print("")
 
 init_graph = np.array([Ro[0],Vox,Ro[1],Voy,Ro[2],Voz])
 
-sol = scp.solve_ivp(rhs,[0,10],init_graph, t_eval=time) #force the amount of points
+sol = scp.solve_ivp(rhs,[time[0],time[-1]],init_graph, t_eval=time) #force the amount of points
 x = sol['y'][0,:]
 y = sol['y'][2,:]
 z = sol['y'][4,:]
@@ -288,7 +290,7 @@ print("")
 
 init_graph = np.array([Ro[0],Vox,Ro[1],Voy,Ro[2],Voz])
 
-sol = scp.solve_ivp(rhs,[0,10],init_graph, t_eval=time) #force the amount of points
+sol = scp.solve_ivp(rhs,[time[0],time[-1]],init_graph, t_eval=time) #force the amount of points
 x = sol['y'][0,:]
 y = sol['y'][2,:]
 z = sol['y'][4,:]
@@ -326,7 +328,7 @@ print("")
 
 init_graph = np.array([Ro[0],Vox,Ro[1],Voy,Ro[2],Voz])
 
-sol = scp.solve_ivp(rhs,[0,10],init_graph, t_eval=time) #force the amount of points
+sol = scp.solve_ivp(rhs,[time[0],time[-1]],init_graph, t_eval=time) #force the amount of points
 x = sol['y'][0,:]
 y = sol['y'][2,:]
 z = sol['y'][4,:]
@@ -364,7 +366,7 @@ print("")
 
 init_graph = np.array([Ro[0],Vox,Ro[1],Voy,Ro[2],Voz])
 
-sol = scp.solve_ivp(rhs,[0,10],init_graph, t_eval=time) #force the amount of points
+sol = scp.solve_ivp(rhs,[time[0],time[-1]],init_graph, t_eval=time) #force the amount of points
 x = sol['y'][0,:]
 y = sol['y'][2,:]
 z = sol['y'][4,:]
@@ -402,7 +404,7 @@ print("")
 
 init_graph = np.array([Ro[0],Vox,Ro[1],Voy,Ro[2],Voz])
 
-sol = scp.solve_ivp(rhs,[0,10],init_graph, t_eval=time) #force the amount of points
+sol = scp.solve_ivp(rhs,[time[0],time[-1]],init_graph, t_eval=time) #force the amount of points
 x = sol['y'][0,:]
 y = sol['y'][2,:]
 z = sol['y'][4,:]
@@ -440,7 +442,7 @@ print("")
 
 init_graph = np.array([Ro[0],Vox,Ro[1],Voy,Ro[2],Voz])
 
-sol = scp.solve_ivp(rhs,[0,10],init_graph, t_eval=time) #force the amount of points
+sol = scp.solve_ivp(rhs,[time[0],time[-1]],init_graph, t_eval=time) #force the amount of points
 x = sol['y'][0,:]
 y = sol['y'][2,:]
 z = sol['y'][4,:]
@@ -478,7 +480,7 @@ print("")
 
 init_graph = np.array([Ro[0],Vox,Ro[1],Voy,Ro[2],Voz])
 
-sol = scp.solve_ivp(rhs,[0,10],init_graph, t_eval=time) #force the amount of points
+sol = scp.solve_ivp(rhs,[time[0],time[-1]],init_graph, t_eval=time) #force the amount of points
 x = sol['y'][0,:]
 y = sol['y'][2,:]
 z = sol['y'][4,:]
