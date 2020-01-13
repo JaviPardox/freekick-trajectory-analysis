@@ -6,10 +6,15 @@ In association football, or soccer, a free kick is a method of restarting a play
 It happens after an infringement of the rules by one of the players.
 
 This code takes different parameters to create any type of free kick.
-Parameters that can be changed: 
-	- An array for the guess of initial velocities (Vo) [x,y,z] 
+
+Parameters that can be changed:
+
+	- An array for the guess of initial velocities (Vo) [x,y,z]
+
 	- An array for the target position (Rf) [x,y,z]
+
 	- The time it takes to reach the target position (time)
+
 	- Angular velocities (Wx, Wy, Wz)
 
 ### FK_t
