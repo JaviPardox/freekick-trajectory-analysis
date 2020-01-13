@@ -9,15 +9,15 @@ This code takes different parameters to create any type of free kick.
 
 Parameters that can be changed:
 
-	- An array for the guess of initial velocities (Vo) [x,y,z]
+	- Vo [x,y,z] - An array for the guess of initial velocities
 
-	- An array for the target position (Rf) [x,y,z]
+	- Rf [x,y,z] - An array for the target position
 
-	- The time it takes to reach the target position (time)
+	- time - The time it takes to reach the target position 
 
-	- Angular velocities (Wx, Wy, Wz)
+	- Wx, Wy and Wz - Angular velocities
 
-### FK_t
+### FK_t.py
 
 This file simulates a standart free kick over a range of different times, from 1 second to 15 seconds.
 
@@ -28,21 +28,21 @@ in the z direction, an average distance of 20 meters to the goal, with a wall of
 players 9.1 meters away from the ball. The said spin is constant, drag and lift
 coefficients also remain constant.
 
-### FK_wx
+### FK_wx.py
 
 This file simulates a standart free kick over a range of different possitive values of spin, only in the x direction.
 Spin in the y and z direction are set to 0.
 
 The values range from 0 rad/s to 4.5 rad/s.
 
-### FK_wy
+### FK_wy.py
 
 This file simulates a standart free kick over a range of different possitive values of spin, only in the y direction.
 Spin in the x and z direction are set to 0.
 
 The values range from 0 rad/s to 4.5 rad/s
 
-### FK_wz
+### FK_wz.py
 
 This file simulates a standart free kick over a range of different possitive values of spin, only in the z direction.
 Spin in the y and x direction are set to 0.
@@ -53,11 +53,11 @@ The values range from 0 rad/s to 4.5 rad/s
 
 Using the model, animated simulation of two examples of sublime free kicks.
 
-### MESSI_FK
+### MESSI_FK.py
 
 Lionel Messi's free kick against Liverpool on May 2019
 
-### ROBERTO_CARLOS_FK
+### ROBERTO_CARLOS_FK.py
 
 Roberto Carlos' free kick against France on June 1997
 
